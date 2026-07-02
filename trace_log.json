@@ -1,0 +1,143 @@
+[
+  {
+    "timestamp": "2026-06-06T22:56:35.782544",
+    "question": "What is autism?",
+    "model": "deepseek-chat",
+    "nodes": [
+      {
+        "node": "planner_node",
+        "duration_ms": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_preview": "What is autism?",
+        "output_preview": "[{'step_id': 1, 'description': '从知识库检索关于自闭症的定义和基本信息', 'action_type': 'retrieve', 'status': 'done'}, ",
+        "status": "ok"
+      },
+      {
+        "node": "retrieval_node",
+        "duration_ms": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_preview": "What is autism?",
+        "output_preview": "数据与计算发展前沿 （ 中英文 ） ， 2024 ， 6 ( 3 ) 王志永 等 ： 孤独症人工智能诊疗进展及前沿\ngies. [ Results ] Artificial intelligence-",
+        "status": "ok"
+      },
+      {
+        "node": "generator_node",
+        "duration_ms": 11205,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_preview": "数据与计算发展前沿 （ 中英文 ） ， 2024 ， 6 ( 3 ) 王志永 等 ： 孤独症人工智能诊疗进展及前沿\ngies. [ Results ] Artificial intelligence-",
+        "output_preview": "根据上下文，孤独症（Autism），全名孤独症谱系障碍（Autism Spectrum Disorder，ASD），又称为自闭症，是一类发生于儿童早期的神经性发育障碍疾病，其临床症状主要表现为社交沟通障碍、刻板行为和兴趣狭窄。\n\n📚 **参考来源**\n• [1] doc\n",
+        "status": "ok"
+      },
+      {
+        "node": "evaluator_node",
+        "duration_ms": 5602,
+        "input_tokens": 200,
+        "output_tokens": 200,
+        "input_preview": "根据上下文，孤独症（Autism），全名孤独症谱系障碍（Autism Spectrum Disorder，ASD），又称为自闭症，是一类发生于儿童早期的神经性发育障碍疾病，其临床症状主要表现为社交沟通",
+        "output_preview": "good",
+        "status": "ok"
+      }
+    ],
+    "total_input_tokens": 200,
+    "total_output_tokens": 200,
+    "total_duration_ms": 22410,
+    "status": "ok"
+  },
+  {
+    "timestamp": "2026-06-07T11:01:36.449929",
+    "question": "如何治疗孤独症？",
+    "model": "deepseek-chat",
+    "nodes": [
+      {
+        "node": "planner_node",
+        "duration_ms": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_preview": "如何治疗孤独症？",
+        "output_preview": "[]",
+        "status": "ok"
+      },
+      {
+        "node": "retrieval_node",
+        "duration_ms": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_preview": "如何治疗孤独症？",
+        "output_preview": "[片段 1] 2 mA ） 的直流电来增加或降低神经元的兴奋性 。\nGiordano 等人\n[ 70 ]\n首次在治疗 ASD 患者中使用了\ntDCS 。 结果显示 ， 患者的行为异常有显著减轻 。\nA",
+        "status": "ok"
+      },
+      {
+        "node": "generator_node",
+        "duration_ms": 13104,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_preview": "[片段 1] 2 mA ） 的直流电来增加或降低神经元的兴奋性 。\nGiordano 等人\n[ 70 ]\n首次在治疗 ASD 患者中使用了\ntDCS 。 结果显示 ， 患者的行为异常有显著减轻 。\nA",
+        "output_preview": "根据提供的上下文，孤独症（孤独症谱系障碍）的治疗方法包括：\n\n1. **经颅直流电刺激（tDCS）**：通过直流电调节神经元兴奋性，研究显示可减轻患者的行为异常，改善行为评估量表得分。\n\n2. **经颅磁刺激（TMS）**：与tDCS共同为孤独症治疗提供新方向，但需要进一步研究验证有效性和确定详细功",
+        "status": "ok"
+      },
+      {
+        "node": "evaluator_node",
+        "duration_ms": 6552,
+        "input_tokens": 200,
+        "output_tokens": 200,
+        "input_preview": "根据提供的上下文，孤独症（孤独症谱系障碍）的治疗方法包括：\n\n1. **经颅直流电刺激（tDCS）**：通过直流电调节神经元兴奋性，研究显示可减轻患者的行为异常，改善行为评估量表得分。\n\n2. **经",
+        "output_preview": "good",
+        "status": "ok"
+      }
+    ],
+    "total_input_tokens": 200,
+    "total_output_tokens": 200,
+    "total_duration_ms": 26208,
+    "status": "ok"
+  },
+  {
+    "timestamp": "2026-06-07T11:03:14.193866",
+    "question": "孤独症最新研究进展？",
+    "model": "deepseek-chat",
+    "nodes": [
+      {
+        "node": "planner_node",
+        "duration_ms": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_preview": "孤独症最新研究进展？",
+        "output_preview": "[{'step_id': 1, 'description': '搜索孤独症最新研究进展', 'action_type': 'tool_call', 'tool_name': 'web_search',",
+        "status": "ok"
+      },
+      {
+        "node": "retrieval_node",
+        "duration_ms": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_preview": "孤独症最新研究进展？",
+        "output_preview": "[片段 1] tion\n引 言\n孤独症 ， 全名孤独症谱系障碍 （ Autism Spec-\ntrum Disorder ， ASD ） ， 又称为自闭症 ， 是一类发\n生于儿童早期的神经性发育障碍疾",
+        "status": "ok"
+      },
+      {
+        "node": "generator_node",
+        "duration_ms": 13201,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "input_preview": "[片段 1] tion\n引 言\n孤独症 ， 全名孤独症谱系障碍 （ Autism Spec-\ntrum Disorder ， ASD ） ， 又称为自闭症 ， 是一类发\n生于儿童早期的神经性发育障碍疾",
+        "output_preview": "根据提供的上下文，孤独症的最新研究进展主要包括以下几个方面：\n\n1. **临床症状学研究进展**：孤独症的核心症状包括社交沟通障碍、刻板行为和兴趣狭窄。研究表明，早期干预（如行为治疗）可显著改善孤独症儿童的认知能力、适应功能和受教育程度，且干预越早效果越好。\n\n2. **人工智能诊疗进展**：上下文",
+        "status": "ok"
+      },
+      {
+        "node": "evaluator_node",
+        "duration_ms": 6600,
+        "input_tokens": 200,
+        "output_tokens": 200,
+        "input_preview": "根据提供的上下文，孤独症的最新研究进展主要包括以下几个方面：\n\n1. **临床症状学研究进展**：孤独症的核心症状包括社交沟通障碍、刻板行为和兴趣狭窄。研究表明，早期干预（如行为治疗）可显著改善孤独症",
+        "output_preview": "incomplete",
+        "status": "ok"
+      }
+    ],
+    "total_input_tokens": 200,
+    "total_output_tokens": 200,
+    "total_duration_ms": 26403,
+    "status": "ok"
+  }
+]

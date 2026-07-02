@@ -1,0 +1,193 @@
+# ═══════════════════════════════════════════════════════════
+# Agent Configuration — 智能文档问答助手 v2.0
+# ═══════════════════════════════════════════════════════════
+# 所有可调参数集中管理，支持环境变量覆盖
+# 修改后重启应用即刻生效，无需改代码
+
+# ── 基础信息 ──
+agent:
+  name: "智能文档问答助手"
+  version: "2.0.0"
+  description: "基于 LangGraph 的多智能体文档问答系统"
+
+# ── LLM 模型注册表 ──
+models:
+  default: deepseek-chat
+  registry:
+    deepseek-chat:
+      name: "DeepSeek V3"
+      provider: deepseek
+      base_url: "https://api.deepseek.com"
+      api_key_env: "DEEPSEEK_API_KEY"
+      pricing: { input: 1.0, output: 2.0 }  # 元/1M tokens
+
+    glm-4-flash:
+      name: "智谱 GLM-4-Flash (免费)"
+      provider: zhipu
+      base_url: "https://open.bigmodel.cn/api/paas/v4"
+      api_key_env: "ZHIPU_API_KEY"
+      pricing: { input: 0.0, output: 0.0 }
+
+    glm-4-plus:
+      name: "智谱 GLM-4-Plus"
+      provider: zhipu
+      base_url: "https://open.bigmodel.cn/api/paas/v4"
+      api_key_env: "ZHIPU_API_KEY"
+      pricing: { input: 50.0, output: 50.0 }
+
+    qwen-max:
+      name: "通义千问 Qwen-Max"
+      provider: dashscope
+      base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+      api_key_env: "DASHSCOPE_API_KEY"
+      pricing: { input: 20.0, output: 60.0 }
+
+    qwen-plus:
+      name: "通义千问 Qwen-Plus"
+      provider: dashscope
+      base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+      api_key_env: "DASHSCOPE_API_KEY"
+      pricing: { input: 2.0, output: 8.0 }
+
+    gpt-4o-mini:
+      name: "OpenAI GPT-4o-mini"
+      provider: openai
+      base_url: "https://api.openai.com/v1"
+      api_key_env: "OPENAI_API_KEY"
+      pricing: { input: 1.1, output: 4.4 }
+
+    gpt-4o:
+      name: "OpenAI GPT-4o"
+      provider: openai
+      base_url: "https://api.openai.com/v1"
+      api_key_env: "OPENAI_API_KEY"
+      pricing: { input: 17.5, output: 70.0 }
+
+# ── Embedding 配置 ──
+embedding:
+  provider: dashscope
+  model: text-embedding-v3
+  base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+  api_key_env: "EMBED_API_KEY"
+  batch_size: 10       # API 单次调用最大批量
+  dimension: 1024       # 输出向量维度
+
+# ── 向量数据库 Qdrant ──
+qdrant:
+  url_env: "QDRANT_URL"
+  api_key_env: "QDRANT_API_KEY"
+  collection_name: "langgraph_rag_docs"
+  distance: "Cosine"
+
+# ── 文档处理 & 检索 ──
+retrieval:
+  chunk_size: 1000
+  chunk_overlap: 200
+  top_k: 5              # 最终返回结果数
+  score_threshold: 0.3  # 相似度最低阈值
+  context_max_chars: 3000  # 上下文最大字符数
+
+  # 多查询扩展 (MQE)
+  mqe:
+    enabled: true
+    expansions: 3       # 生成 N 个变体查询
+    top_k_per_query: 4
+
+  # 假设文档嵌入 (HyDE)
+  hyde:
+    enabled: true
+
+# ── 工具中心 ──
+tools:
+  # 全局启用的工具列表（注释掉 = 禁用）
+  enabled:
+    - calculator
+    - web_search
+    - read_notes
+    - get_current_time
+
+  # 工具分类（用于 UI 展示）
+  categories:
+    compute: [calculator]
+    search: [web_search]
+    memory: [read_notes]
+    system: [get_current_time]
+
+  # 各工具专属配置
+  tool_configs:
+    web_search:
+      max_results: 3
+      timeout_sec: 10
+    read_notes:
+      max_notes: 5
+      file_path: "learning_notes.json"
+
+# ── 多智能体配置 ──
+agents:
+  planner:
+    enabled: true
+    max_steps: 5
+    temperature: 0.3    # 规划需确定性
+
+  retrieval:
+    enabled: true
+    mqe: true
+    hyde: true
+    top_k: 5
+
+  generator:
+    enabled: true
+    streaming: true
+    temperature: 0.7
+    add_citations: true
+
+  evaluator:
+    enabled: true
+    min_answer_length: 20
+    max_retries: 2
+    quality_threshold: 3  # score >= 3 视为合格
+
+  supervisor:
+    max_plan_retries: 2
+
+# ── RAGAS 评估 ──
+evaluation:
+  # 基础评估（每次问答自动执行）
+  basic:
+    enabled: true
+    log_retention: 200     # 保留最近 N 条记录
+
+  # RAGAS 深度评估（按需触发，消耗更多 token）
+  ragas:
+    enabled: true
+    metrics:
+      - faithfulness        # 答案是否忠于上下文
+      - answer_relevancy    # 答案是否切题
+      - context_precision   # 相关文档是否排前面
+      - context_recall      # 是否检索到所有相关信息
+    # 各指标阈值（低于阈值标记为 warning）
+    thresholds:
+      faithfulness: 0.7
+      answer_relevancy: 0.7
+      context_precision: 0.6
+      context_recall: 0.6
+
+  # 成本追踪
+  cost_tracking:
+    enabled: true
+    budget_alert_rmb: 10.0   # 累计成本超过此值提醒
+
+# ── UI 配置 ──
+ui:
+  title: "Document Q&A Assistant"
+  port: 7860
+  server_name: "0.0.0.0"
+  share: false
+  theme_name: "slate-blue"       # slate-blue | monochrome | ocean
+  dark_mode_default: false       # initial dark/light mode
+
+# ── 日志 & 持久化 ──
+persistence:
+  checkpoint_db: "checkpoints.db"
+  eval_log: "eval_log.json"
+  learning_notes: "learning_notes.json"

@@ -1,0 +1,376 @@
+[
+  {
+    "timestamp": "2026-06-02T13:02:00.165253",
+    "model": "",
+    "question": "AI如何帮助诊断孤独症？有什么优势？",
+    "answer_preview": "根据上下文，AI帮助诊断孤独症的主要方式和优势包括：\n\n1. **提高客观性和自动化程度**：传统诊断依赖医生人为观察，不同医生经验水平不一，而AI技术可以减少主观性，提升诊断过程的客观性。\n\n2. **缓解医疗资源稀缺问题**：具有诊断资格的专业医生仅有两三百人，AI辅助诊断可以减轻专业人员重复性",
+    "success": true,
+    "reflection_score": 5,
+    "retrieval_hit_rate": 0.333,
+    "hallucination_rate": 0.714,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "cost_rmb": 0.0,
+    "elapsed_ms": 0,
+    "context_length": 2965
+  },
+  {
+    "timestamp": "2026-06-02T14:52:03.148637",
+    "model": "deepseek-chat",
+    "question": "如何治疗孤独症？",
+    "answer_preview": "根据现有上下文，孤独症（ASD）的治疗方法主要包括以下几种：\n\n1. **经颅直流电刺激（tDCS）**：通过施加微弱直流电来调节神经元兴奋性，研究显示可减轻患者的行为异常并改善行为评估量表得分。\n\n2. **经颅磁刺激（TMS）**：与tDCS类似，为孤独症治疗提供了新维度，但需进一步研究验证有效",
+    "success": true,
+    "reflection_score": 5,
+    "retrieval_hit_rate": 0.0,
+    "hallucination_rate": 0.333,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "cost_rmb": 0.0,
+    "elapsed_ms": 0,
+    "context_length": 1973
+  },
+  {
+    "timestamp": "2026-06-04T17:22:49.704665",
+    "model": "deepseek-chat",
+    "question": "孤独症的最新研究进展？",
+    "answer_preview": "根据提供的上下文，孤独症（ASD）的最新研究进展主要集中在以下几个方面：\n\n1. **临床症状学与早期干预**：研究表明，早期行为治疗可以改善孤独症儿童的症状，且干预越早效果越好。早期接受干预的患儿在认知能力、适应功能和早期受教育程度方面可能有较大提高。\n\n2. **人工智能诊疗进展**：文中提到，",
+    "success": true,
+    "reflection_score": 5,
+    "retrieval_hit_rate": 0.0,
+    "hallucination_rate": 0.286,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "cost_rmb": 0.0,
+    "elapsed_ms": 0,
+    "context_length": 2007,
+    "ragas": {
+      "overall_score": 0.675,
+      "verdict": "warning",
+      "metrics": {
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "答案中的所有事实声明均能在上下文中找到直接或间接支撑，包括早期干预效果、眼动追踪、3D姿态估计和多传感相机系统等。"
+        },
+        "answer_relevancy": {
+          "score": 0.7,
+          "reason": "答案部分回应了问题核心，聚焦于早期干预和人工智能诊疗，但遗漏了遗传、药物、成年孤独症等多个重要方面，且依赖有限上下文，未能全面覆盖最新研究进展。"
+        },
+        "context_precision": {
+          "score": 0.0,
+          "reason": "无检索结果"
+        },
+        "context_recall": {
+          "score": 1.0,
+          "reason": "上下文完整覆盖了孤独症在临床症状学和人工智能诊疗方面的最新研究进展，未缺失必要信息。"
+        }
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T20:30:20.890107",
+    "model": "deepseek-chat",
+    "question": "怎么治疗孤独症？",
+    "answer_preview": "根据提供的上下文，目前孤独症（孤独症谱系障碍，ASD）是不可治愈的，但早期行为治疗可以改善症状，且干预越早，效果越好。治疗方法包括：行为干预，如基于虚拟现实（VR）的技术用于增强社交技能和共同注意能力，以及基于社交机器人的辅助干预；此外，还有经颅直流电刺激（tDCS）等物理治疗方法，但需要进一步研究",
+    "success": true,
+    "reflection_score": 5,
+    "retrieval_hit_rate": 0.0,
+    "hallucination_rate": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "cost_rmb": 0.0,
+    "elapsed_ms": 0,
+    "context_length": 1973,
+    "ragas": {
+      "overall_score": 0.825,
+      "verdict": "pass",
+      "metrics": {
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "答案中的所有事实声明均在上下文中找到直接支撑，包括孤独症不可治愈、早期行为治疗改善症状且干预越早效果越好、基于VR和社交机器人的行为干预、以及tDCS等物理治疗需要进一步研究验证。"
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "答案直接回应了问题核心，明确指出孤独症不可治愈但可通过早期行为干预等方法改善症状，没有偏题或遗漏子问题。"
+        },
+        "context_precision": {
+          "score": 0.5,
+          "reason": "只有第2个结果部分涉及治疗方法（tDCS等），第1个结果仅介绍孤独症定义和流行病学，未提供治疗信息，因此相关性低。"
+        },
+        "context_recall": {
+          "score": 0.8,
+          "reason": "上下文提供了治疗方法和效果说明，但缺少明确建议咨询专业人员的表述，不过从完整性看已覆盖核心信息。"
+        }
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-04T20:32:36.001505",
+    "model": "deepseek-chat",
+    "question": "什么是孤独症？",
+    "answer_preview": "根据上下文，孤独症（全名孤独症谱系障碍，ASD，又称为自闭症）是一类发生于儿童早期的神经性发育障碍疾病，其临床症状主要表现为社交沟通障碍、刻板行为和兴趣狭窄。\n\n📚 **参考来源**\n• [1] 孤独症人工智能诊疗进展及前沿.pdf\n",
+    "success": true,
+    "reflection_score": 5,
+    "retrieval_hit_rate": 0.0,
+    "hallucination_rate": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "cost_rmb": 0.0,
+    "elapsed_ms": 0,
+    "context_length": 992,
+    "ragas": {
+      "overall_score": 1.0,
+      "verdict": "pass",
+      "metrics": {
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "答案中的三个事实声明（孤独症全名、发生于儿童早期的神经性发育障碍、临床症状表现为社交沟通障碍/刻板行为/兴趣狭窄）均可在上下文中找到直接支撑。"
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "答案直接定义了孤独症，准确描述了其核心特征，完全切中问题要害。"
+        },
+        "context_precision": {
+          "score": 1.0,
+          "reason": "唯一的检索结果精确回答了孤独症的定义，包含全称、别名、发病年龄、障碍类型及核心症状，相关性极高。"
+        },
+        "context_recall": {
+          "score": 1.0,
+          "reason": "上下文完整包含了回答‘什么是孤独症’所需的所有关键信息"
+        }
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-05T15:43:16.394038",
+    "model": "deepseek-chat",
+    "question": "什么是大语言模型？",
+    "answer_preview": "抱歉，根据您提供的上下文，其中没有提到“大语言模型”的相关信息。我无法基于现有上下文回答这个问题。如果您能提供相关上下文，我将很乐意帮您解答。\n\n📚 **参考来源**\n• [1] 孤独症人工智能诊疗进展及前沿.pdf\n",
+    "success": false,
+    "reflection_score": 1,
+    "retrieval_hit_rate": 0.0,
+    "hallucination_rate": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "cost_rmb": 0.0,
+    "elapsed_ms": 0,
+    "context_length": 400,
+    "ragas": {
+      "overall_score": 0.0,
+      "verdict": "fail",
+      "metrics": {
+        "faithfulness": {
+          "score": 0.0,
+          "reason": "答案声称上下文未提及“大语言模型”，但上下文主要讨论孤独症人工智能诊疗，确实未涉及大语言模型，因此该声明有支撑，但答案本身是一个否定性声明，实际无事实声明需验证，此处将整句视为一个声明，它正确描述了上"
+        },
+        "answer_relevancy": {
+          "score": 0.0,
+          "reason": "答案完全回避问题，未给出任何关于大语言模型的实质内容，反而要求提供额外上下文，属于答非所问。"
+        },
+        "context_precision": {
+          "score": 0.0,
+          "reason": "检索结果完全不相关，内容是关于孤独症的多模态数据集和干预研究，与大语言模型无关。"
+        },
+        "context_recall": {
+          "score": 0.0,
+          "reason": "上下文内容是关于孤独症人工智能诊疗的研究，完全不涉及大语言模型的任何信息"
+        }
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-05T15:44:04.393807",
+    "model": "deepseek-chat",
+    "question": "什么是大语言模型？",
+    "answer_preview": "抱歉，根据您提供的上下文，其中并未提及“大语言模型”的相关定义或解释。我无法基于这段上下文回答您的问题。如果您能提供包含大语言模型相关内容的上下文，我将很乐意帮助您解答。\n\n📚 **参考来源**\n• [1] 孤独症人工智能诊疗进展及前沿.pdf\n",
+    "success": false,
+    "reflection_score": 1,
+    "retrieval_hit_rate": 0.0,
+    "hallucination_rate": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "cost_rmb": 0.0,
+    "elapsed_ms": 0,
+    "context_length": 400,
+    "ragas": {
+      "overall_score": 0.0,
+      "verdict": "fail",
+      "metrics": {
+        "faithfulness": {
+          "score": 0.0,
+          "reason": "答案中的两个声明均声称上下文中未提及大语言模型，但上下文确实未涉及大语言模型，因此声明本身是事实性正确的，然而评估要求检查声明是否有支撑依据，这里的两个声明实际上是对上下文缺失的陈述，而上下文本身并未"
+        },
+        "answer_relevancy": {
+          "score": 0.0,
+          "reason": "答案未直接回答‘什么是大语言模型’，而是以缺乏上下文为由拒绝回答，完全偏题。"
+        },
+        "context_precision": {
+          "score": 0.0,
+          "reason": "检索结果完全不相关，内容为孤独症干预研究中的数据集描述，与大语言模型的定义无关。"
+        },
+        "context_recall": {
+          "score": 0.0,
+          "reason": "上下文主要讨论孤独症人工智能诊疗中的多模态数据集和干预研究，未提及大语言模型相关内容"
+        }
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-06T17:15:56.493367",
+    "model": "deepseek-chat",
+    "question": "What is the main topic of this document?",
+    "answer_preview": "该文档的主要主题是**基于人工智能的自闭症诊断与干预技术**。上下文中的摘要明确指出：“本文对基于人工智能的自闭症诊断和干预技术进行了文献综述，为未来工作提供指导”，并涵盖了临床手动诊断、AI驱动的诊断以及基于AI的干预等发展内容。",
+    "success": true,
+    "reflection_score": 5,
+    "retrieval_hit_rate": 0.0,
+    "hallucination_rate": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "total_tokens": 0,
+    "cost_rmb": 0.0,
+    "elapsed_ms": 0,
+    "context_length": 1980,
+    "ragas": {
+      "overall_score": 0.75,
+      "verdict": "pass",
+      "metrics": {
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "答案中的所有事实声明均在上下文中找到了直接支撑依据。"
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "答案直接、准确地回应了问题的核心，没有偏题或遗漏任何子问题。"
+        },
+        "context_precision": {
+          "score": 0.0,
+          "reason": "无检索结果"
+        },
+        "context_recall": {
+          "score": 1.0,
+          "reason": "上下文中的摘要明确指出了文档主题是基于人工智能的自闭症诊断和干预技术，信息完整。"
+        }
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-06T22:56:35.781526",
+    "model": "deepseek-chat",
+    "question": "What is autism?",
+    "answer_preview": "根据上下文，孤独症（Autism），全名孤独症谱系障碍（Autism Spectrum Disorder，ASD），又称为自闭症，是一类发生于儿童早期的神经性发育障碍疾病，其临床症状主要表现为社交沟通障碍、刻板行为和兴趣狭窄。\n\n📚 **参考来源**\n• [1] doc\n",
+    "success": true,
+    "reflection_score": 5,
+    "retrieval_hit_rate": 0.0,
+    "hallucination_rate": 0.0,
+    "input_tokens": 200,
+    "output_tokens": 200,
+    "total_tokens": 400,
+    "cost_rmb": 0.0006,
+    "elapsed_ms": 22410,
+    "context_length": 1987,
+    "ragas": {
+      "overall_score": 1.0,
+      "verdict": "pass",
+      "metrics": {
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "答案中的事实声明与上下文中的引用完全一致，因此所有声明都有支撑。"
+        },
+        "answer_relevancy": {
+          "score": 1.0,
+          "reason": "答案直接、准确地定义了孤独症，并提供了关键症状和别名，完全切中问题核心。"
+        },
+        "context_precision": {
+          "score": 1.0,
+          "reason": "所有检索结果均与自闭症定义高度相关，无无关内容。"
+        },
+        "context_recall": {
+          "score": 1.0,
+          "reason": "上下文明确包含了回答‘What is autism?’所需的全部关键信息。"
+        }
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-07T11:01:36.447213",
+    "model": "deepseek-chat",
+    "question": "如何治疗孤独症？",
+    "answer_preview": "根据提供的上下文，孤独症（孤独症谱系障碍）的治疗方法包括：\n\n1. **经颅直流电刺激（tDCS）**：通过直流电调节神经元兴奋性，研究显示可减轻患者的行为异常，改善行为评估量表得分。\n\n2. **经颅磁刺激（TMS）**：与tDCS共同为孤独症治疗提供新方向，但需要进一步研究验证有效性和确定详细功",
+    "success": true,
+    "reflection_score": 5,
+    "retrieval_hit_rate": 0.0,
+    "hallucination_rate": 0.429,
+    "input_tokens": 200,
+    "output_tokens": 200,
+    "total_tokens": 400,
+    "cost_rmb": 0.0006,
+    "elapsed_ms": 26208,
+    "context_length": 1987,
+    "ragas": {
+      "overall_score": 0.675,
+      "verdict": "warning",
+      "metrics": {
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "答案中的所有声明均能在上下文中找到直接或间接支撑，包括tDCS、TMS、虚拟现实干预、社交机器人干预、效果评价方法以及孤独症不可治愈等说明。"
+        },
+        "answer_relevancy": {
+          "score": 0.7,
+          "reason": "答案直接回应了问题，但仅基于提供的上下文列举了部分治疗方法，遗漏了孤独症治疗中更广泛和主流的干预手段，且未强调不可治愈性和早期干预的重要性。"
+        },
+        "context_precision": {
+          "score": 0.0,
+          "reason": "无检索结果"
+        },
+        "context_recall": {
+          "score": 1.0,
+          "reason": "上下文完整涵盖了问题所需的所有关键治疗信息"
+        }
+      }
+    }
+  },
+  {
+    "timestamp": "2026-06-07T11:03:14.191860",
+    "model": "deepseek-chat",
+    "question": "孤独症最新研究进展？",
+    "answer_preview": "根据提供的上下文，孤独症的最新研究进展主要包括以下几个方面：\n\n1. **临床症状学研究进展**：孤独症的核心症状包括社交沟通障碍、刻板行为和兴趣狭窄。研究表明，早期干预（如行为治疗）可显著改善孤独症儿童的认知能力、适应功能和受教育程度，且干预越早效果越好。\n\n2. **人工智能诊疗进展**：上下文",
+    "success": false,
+    "reflection_score": 3,
+    "retrieval_hit_rate": 0.0,
+    "hallucination_rate": 0.333,
+    "input_tokens": 200,
+    "output_tokens": 200,
+    "total_tokens": 400,
+    "cost_rmb": 0.0006,
+    "elapsed_ms": 26403,
+    "context_length": 2005,
+    "ragas": {
+      "overall_score": 0.675,
+      "verdict": "warning",
+      "metrics": {
+        "faithfulness": {
+          "score": 1.0,
+          "reason": "答案中的所有事实声明均能在上下文中找到直接或间接的支撑依据。"
+        },
+        "answer_relevancy": {
+          "score": 0.9,
+          "reason": "答案直接回应了问题核心，但受限于上下文，未覆盖2024年后最新突破，且缺少遗传、神经影像等常见研究进展。"
+        },
+        "context_precision": {
+          "score": 0.0,
+          "reason": "无检索结果"
+        },
+        "context_recall": {
+          "score": 0.8,
+          "reason": "上下文覆盖了临床症状学和AI诊疗进展等关键信息，但未包含最新时间节点的突破性研究。"
+        }
+      }
+    }
+  }
+]
